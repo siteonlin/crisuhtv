@@ -32,7 +32,8 @@
       "additionalSetColors": [
         "#f7ab0a",
         "#14f708",
-        "#6a0fc6"
+        "#6a0fc6",
+        "#ee0b0b"
       ]
     },
     "path": "@PROJECT_PATH@",
@@ -55,7 +56,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 59,
+    "uniqCompNum": 61,
     "versionPublish": "5.3.0",
     "screenshot": "screenshot.png",
     "favicon": false,
@@ -515,6 +516,59 @@
           "_global": false,
           "_once": false,
           "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".video-wrapper iframe": {
+              "width": "100%"
+            },
+            "h2, h4, p": {
+              "margin": "0"
+            },
+            "@media (max-width: 992px)": {
+              ".col-md-6": {
+                "width": "100%"
+              }
+            },
+            ".mbr-section-head": {
+              "margin-bottom": "2rem",
+              "@media (min-width: 993px)": {
+                "margin-bottom": "0"
+              },
+              "@media (max-width: 992px)": {
+                "text-align": "center"
+              }
+            },
+            ".mbr-section-title": {
+              "color": "#ee0b0b",
+              "margin-bottom": "1rem"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#14f708",
+              "margin-bottom": "6px"
+            },
+            ".mbr-text": {
+              "color": "#ffffff",
+              "text-align": "center"
+            }
+          },
+          "_name": "video2",
+          "_customHTML": "<section class=\"video2\" group=\"Image & Video\" plugins=\"PlayerVimeo\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverse\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Description\" name=\"showDescription\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" value=\"@ADDONS_PATH@/impressm5/components/_images/background2.jpg\" title=\"Image\">\n            <input type=\"color\" value=\"#000000\" title=\"Color\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\n        <div class=\"row d-flex align-items-center\" mbr-class=\"{'flex-row-reverse': reverse}\">\n            <div class=\"col-12 col-md-6\" mbr-if=\"showTitle || showSubtitle || showDescription\">\n                <div class=\" mbr-section-head\">\n                    <h4 class=\"mbr-section-subtitle mbr-fonts-style\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\">APERTE O PLAY</h4>\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                        A MELHOR LISTA 2022</h2>\n                    <p class=\"mbr-text mbr-fonts-style mbr-light\" mbr-theme-style=\"display-7\" mbr-if=\"showDescription\" data-app-selector=\".mbr-text\"><br>A MELHOR LISTA DE CANAIS, FILMES E SÉRIES DO BRASIL<br>Disponível em qualquer lugar!<br>Está no tédio e deseja um pouco de entretenimento? Então você está no lugar certo! Com apenas 1 clique você pode conferir tudo sobre os nossos serviços! Ficou curioso? clique no botão abaixo e entenda um pouco mais sobre os nossos serviços!</p>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6 video-block\">\n                <div mbr-video class=\"video-wrapper\">\n                    <iframe src=\"https://www.youtube.com/watch?v=xP6mHlNvKiA&loop=0&autoplay=0\"></iframe>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "sXURaJoLt8",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "video2-1o"
         },
         {
           "alias": false,
